@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  animeplayer.api:
+    image: ${DOCKER_REGISTRY-}animeplayerapi
+    container_name: animeplayer.api
+    build:
+      context: .
+      dockerfile: AnimePlayer.Api/Dockerfile
+    ports:
+        - "5000:5000"
+        - "5001:5001"
+
+  animepalyer.dataaccess:
+    image: postgres:latest
+    container_name: animepalyer.dataaccess
+    environment:
+      - POSTGRES_DB=anime
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/anime-db:/var/lib/postgresql/data 
+    ports:
+      - 5432:5432 
