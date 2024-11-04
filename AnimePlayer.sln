@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimePlayer.DataAccess", "A
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5207662A-B32D-4C0F-86CE-8E82DF89B879}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimePlayer.Application", "AnimePlayer.Application\AnimePlayer.Application.csproj", "{7F2C6DA6-4AD7-45E7-A21E-CEDCAC6B4D1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5207662A-B32D-4C0F-86CE-8E82DF89B879}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5207662A-B32D-4C0F-86CE-8E82DF89B879}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5207662A-B32D-4C0F-86CE-8E82DF89B879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F2C6DA6-4AD7-45E7-A21E-CEDCAC6B4D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F2C6DA6-4AD7-45E7-A21E-CEDCAC6B4D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F2C6DA6-4AD7-45E7-A21E-CEDCAC6B4D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F2C6DA6-4AD7-45E7-A21E-CEDCAC6B4D1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

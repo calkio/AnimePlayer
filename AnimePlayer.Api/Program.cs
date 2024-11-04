@@ -1,4 +1,8 @@
+using AnimePlayer.Application.Service;
+using AnimePlayer.Core.Repositories;
+using AnimePlayer.Core.Service;
 using AnimePlayer.DataAccess;
+using AnimePlayer.DataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +17,9 @@ builder.Services.AddDbContext<AnimePlayerDbContex>(
     {
         options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(AnimePlayerDbContex)));
     });
+
+builder.Services.AddScoped<IAnimeService, AnimeService>();
+builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
 
 var app = builder.Build();
 

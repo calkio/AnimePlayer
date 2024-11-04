@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AnimePlayer.Application\AnimePlayer.Application.csproj" />
     <ProjectReference Include="..\AnimePlayer.DataAccess\AnimePlayer.DataAccess.csproj" />
   </ItemGroup>
 
