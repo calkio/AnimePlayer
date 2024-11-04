@@ -18,7 +18,7 @@
         public string Description { get; } = string.Empty;
         public int YearIssue { get; }
 
-        public static (Anime, string error) Create(Guid id, string title, string description, int yearIssue)
+        public static (Anime Anime, string Error) Create(Guid id, string title, string description, int yearIssue)
         {
             var error = string.Empty;
 
