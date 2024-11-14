@@ -14,15 +14,16 @@ namespace AnimePlayer.DataAccess.Repositories
             _context = context;
         }
 
-        public async Task<List<Anime>> Get()
+        public async Task<IEnumerable<Anime>> Get()
         {
             var animesEntites = await _context.Animes
                 .AsNoTracking()
                 .ToListAsync();
 
             var animes = animesEntites
-                .Select(a => Anime.Create(a.Id, a.Title, a.Description, a.YearIssue).Anime)
-                .ToList();
+                        .Select(a => Anime.Create(a.Id, a.Title, a.Description, a.YearIssue))
+                        .Where(result => result.IsSuccess) 
+                        .Select(result => result.Value);
 
             return animes;
         }

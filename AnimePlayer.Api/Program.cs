@@ -1,4 +1,5 @@
 using AnimePlayer.Application.Service;
+using AnimePlayer.Core.Logger;
 using AnimePlayer.Core.Repositories;
 using AnimePlayer.Core.Service;
 using AnimePlayer.DataAccess;
@@ -22,6 +23,7 @@ builder.Services.AddScoped<IAnimeService, AnimeService>();
 builder.Services.AddScoped<IAnimeRepository, AnimeRepository>();
 
 var app = builder.Build();
+LogAnimePlayer.Log.Debug("Приложение собралось");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

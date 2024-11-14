@@ -6,7 +6,7 @@ namespace AnimePlayer.Core.Repositories
     {
         Task<Guid> Create(Anime anime);
         Task<Guid> Delete(Guid id);
-        Task<List<Anime>> Get();
+        Task<IEnumerable<Anime>> Get();
         Task<Guid> Update(Guid id, string title, string description, int yearIssue);
     }
 }

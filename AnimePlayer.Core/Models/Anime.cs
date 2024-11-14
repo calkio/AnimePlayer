@@ -1,4 +1,6 @@
-﻿namespace AnimePlayer.Core.Models
+﻿using CSharpFunctionalExtensions;
+
+namespace AnimePlayer.Core.Models
 {
     public class Anime
     {
@@ -18,22 +20,22 @@
         public string Description { get; } = string.Empty;
         public int YearIssue { get; }
 
-        public static (Anime Anime, string Error) Create(Guid id, string title, string description, int yearIssue)
+        public static Result<Anime> Create(Guid id, string title, string description, int yearIssue)
         {
             var error = string.Empty;
 
             if (string.IsNullOrEmpty(title) || title.Length > MAX_COUNT_SYMBOL_TITLE)
             {
-                error = "title";
+                return Result.Failure<Anime>("Title");
             }
             if (yearIssue < MIN_YEAR_ANIME)
             {
-                error = "yearIssue";
+                return Result.Failure<Anime>("YearIssue");
             }
 
             var anime = new Anime(id, title, description, yearIssue);
 
-            return (anime, error);
+            return Result.Success<Anime>(anime);
         }
     }
 }

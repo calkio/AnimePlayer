@@ -13,7 +13,7 @@ namespace AnimePlayer.Application.Service
             _animeRepository = animeRepository;
         }
 
-        public async Task<List<Anime>> GetAllAnime()
+        public async Task<IEnumerable<Anime>> GetAllAnime()
         {
             return await _animeRepository.Get();
         }
@@ -28,7 +28,7 @@ namespace AnimePlayer.Application.Service
             return await _animeRepository.Update(id, title, description, yearIssue);
         }
 
-        public async Task<Guid> Delete(Guid id)
+        public async Task<Guid> DeleteAnime(Guid id)
         {
             return await _animeRepository.Delete(id);
         }

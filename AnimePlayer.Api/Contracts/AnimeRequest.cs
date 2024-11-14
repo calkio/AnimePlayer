@@ -1,6 +1,6 @@
 ﻿namespace AnimePlayer.Api.Contracts
 {
-    public record AnimeResponse(
+    public record AnimeRequest(
         Guid id,
         string Title,
         string Description,
